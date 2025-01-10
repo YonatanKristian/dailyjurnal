@@ -314,38 +314,43 @@ footer .credit a {
   </div>
 </section>
 <!-- article end -->  
-    </section>
-        <section class="gallery">
-          <div class="judul-gallery">
-            <h1>Our Gallery<span class="grey">.</span></h1>
-          </div>
-          <div id="carouselExampleDark" class="carousel m-5 carousel-dark slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="img/freestocks-y0S2aew-vvE-unsplash.jpg " class="rounded-3 d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="img/cody-scott-milewski-5JERurjLmrA-unsplash.jpg" class=" rounded-3 d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="img/freestocks-BIrCeCTdGAY-unsplash.jpg" class="rounded-3 d-block w-100" alt="...">
-              </div>
+                <?php
+                $sql = "SELECT * FROM gallery ORDER BY tanggal DESC"; // Pastikan nama tabel Anda benar
+                $hasil = $conn->query($sql);
+                $first = true; // Untuk menandai item pertama
+
+                while($row = $hasil->fetch_assoc()) {
+                ?>
+                    <div class="carousel-item <?php if ($first) { echo 'active'; $first = false; } ?>">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="img/<?= $row["gambar"] ?>" class="card-img-top" alt="..." />
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">
+                                        <?= $row["tanggal"] ?>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-          </div>
-        </section>
+
+              </div>
+    </section>
     <footer>
         <div class="links">
           <a href="#">Home</a>
