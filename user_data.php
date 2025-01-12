@@ -32,7 +32,7 @@
                                 if ($row["gambar"] != '') {
                                     if (file_exists('img/' . $row["gambar"] . '')) {
                                 ?>
-                                        <img src="img/<?= $row["gambar"] ?>" width="200">
+                                        <img src="img/<?= $row["gambar"] ?>" width="150">
                                 <?php
                                     }
                                 }
@@ -41,6 +41,7 @@
                             <td>
                                 <a href="#" title="edit" class="badge rounded-pill text-bg-success" data-bs-toggle="modal" data-bs-target="#modalEdit<?= $row["id"] ?>"><i class="bi bi-pencil"></i></a>
                                 <a href="#" title="delete" class="badge rounded-pill text-bg-danger" data-bs-toggle="modal" data-bs-target="#modalHapus<?= $row["id"] ?>"><i class="bi bi-x-circle"></i></a>
+                                
                                 <!-- Awal Modal Edit -->
                             <div class="modal fade" id="modalEdit<?= $row["id"] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -52,12 +53,12 @@
                                         <form method="post" action="" enctype="multipart/form-data">
                                             <div class="modal-body">
                                                 <div class="mb-3">
-                                                    <label for="formGroupExampleInput" class="form-label">Judul</label>
+                                                    <label for="formGroupExampleInput" class="form-label">Username</label>
                                                     <input type="hidden" name="id" value="<?= $row["id"] ?>">
                                                     <input type="text" class="form-control" name="username" placeholder="Tuliskan Username" value="<?= $row["username"] ?>" required>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="floatingTextarea2">Username</label>
+                                                    <label for="floatingTextarea2">Password</label>
                                                     <textarea class="form-control" placeholder="Tuliskan Password" name="password" required><?= $row["password"] ?></textarea>
                                                 </div>
                                                 <div class="mb-3">

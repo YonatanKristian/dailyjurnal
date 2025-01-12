@@ -108,7 +108,7 @@ if (isset($_POST['simpan'])) {
             unlink("img/" . $_POST['gambar_lama']);
         }
 
-        $stmt = $conn->prepare("UPDATE article 
+        $stmt = $conn->prepare("UPDATE user2
                                 SET 
                                 gambar = ?,
                                 password =?,

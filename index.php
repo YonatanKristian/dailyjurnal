@@ -318,7 +318,7 @@ footer .credit a {
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php
-                $sql = "SELECT * FROM gallery ORDER BY tanggal DESC"; // Pastikan nama tabel Anda benar
+                $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
                 $hasil = $conn->query($sql);
                 $first = true; // Untuk menandai item pertama
 
@@ -351,6 +351,7 @@ footer .credit a {
 
               </div>
     </section>
+    
     <footer>
         <div class="links">
           <a href="#">Home</a>

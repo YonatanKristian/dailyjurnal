@@ -98,7 +98,7 @@ if (!isset($_SESSION['username'])) {
             include($_GET['page'].".php");
         }else{
         ?>
-            <h4 class="lead display-6 pb-2 border-bottom border-danger-subtle">Dashboard</h4>
+            <h4 class="lead display-6 pb-2 border-bottom border-danger-subtle">dashboard</h4>
             <?php
             include("dashboard.php");
         }
@@ -115,7 +115,7 @@ if (!isset($_SESSION['username'])) {
         <a href="https://twitter.com/udinusofficial"
         ><i class="bi bi-twitter h2 p-2 text-dark"></i
         ></a>
-        <a href="https://wa.me/+62812685577"
+        <a href="https://wa.me/+6281575006067"
         ><i class="bi bi-whatsapp h2 p-2 text-dark"></i
         ></a>
     </div>
